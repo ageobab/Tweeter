@@ -1,0 +1,6 @@
+
+development:
+  adapter: postgresql
+  database: tweeter_development
+  host: localhost
+
