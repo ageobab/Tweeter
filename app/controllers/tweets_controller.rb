@@ -3,11 +3,15 @@ class TweetsController < ApplicationController
   def create
     @tweet = current_user.tweets.build(tweet_params)
     if @tweet.save 
-      redirect_to user_path(current_user)
+      redirect_to user_path(current_user), notice: "Success"
     else 
-      redirect_to user_path(current_user)
+      redirect_to user_path(current_user), alert: "You F'ed up"
     end
   end
+
+  
+
+
 
   def destroy
     @tweet.destroy

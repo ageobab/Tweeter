@@ -1,2 +1,18 @@
-<h1>You're all alone.</h1>
-<p>We don't have any users. This is a fake app. We now have all your info.</p>
+<h1>Tweets</h1>
+
+<div class="row-fluid">
+  <div class="span4 well">
+    <%= form_for (@tweet) do |f| %>
+     <p><%= f.text_field(:content)%></p>
+     <p><%= f.submit("Tweet it")%></p>
+    <% end %>
+  </div><!--/.well -->
+  <div class="span6">
+    <div class="well">
+      <h1>Feed</h1>
+      <% @user.tweets.each do |post| %>
+      <p> <%= post.content %> </p>
+      <% end %>
+    </div>
+  </div>
+</div><!--/row-->
